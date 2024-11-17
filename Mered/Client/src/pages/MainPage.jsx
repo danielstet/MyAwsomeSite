@@ -14,6 +14,10 @@ import photo4 from "../assets/4.webp";
 // My css
 import './MainPage.css'
 
+// Item Component
+import Item from '../components/Item/Item';
+const rowMax = 6;
+
 const MainPage = () => {
   return (
 
@@ -34,8 +38,13 @@ const MainPage = () => {
       <SwiperSlide><img src={photo3} alt="" /></SwiperSlide>
       <SwiperSlide><img src={photo4} alt="" /></SwiperSlide>
     </Swiper>
-      <div>Recommended</div>
-      
+    <div>Recommended</div>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
+        <Item/>
     </>
   )
 }

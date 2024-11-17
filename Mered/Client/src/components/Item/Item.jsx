@@ -3,8 +3,8 @@ import shirt from '../../assets/ShirtForShowCase.png'
 const Item = () => {
   return (
     <div id="Item">
-        <img id="ItemImage" alt="" src="" width={300} height={300}></img>
-        <label For='ItemImage'>Header</label>
+        <img id="ItemImage" alt="" src={shirt} width={300} height={300}></img>
+        <p For='ItemImage'>Header</p>
         <p>Price</p>
     </div>
   )

@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <>
     <footer className="footer">
-      
       <div className="footer-column">
         <h3>CUSTOMER SUPPORT</h3>
         <ul>
@@ -38,7 +37,6 @@ const Footer = () => {
     <div className="footer-copyright">
         Copyright ©2024, MERED Wear Israel
       </div>
-
     </>
     
   );

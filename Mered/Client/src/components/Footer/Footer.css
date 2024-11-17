@@ -4,10 +4,10 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 20px;
-    background-image: url('./src/images/photo.gif');
+    background-image: url('../../assets/FooterBG.gif');
     background-size: cover; /* Изображение будет покрывать весь фон */
-  background-position: center; /* Центрирование изображения */
-  background-repeat: no-repeat;
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat;
     color: #fff; /* Белый текст для контраста */
     font-family: "Arial", sans-serif; /* Тонкий, современный шрифт */
     text-align: left; /* Выравнивание текста по левому краю */
@@ -55,15 +55,12 @@
     text-align: center;
     font-size: 12px;
     font-weight: lighter;
-    margin-top: 20px;
     color: #777;
     width: 100%;
-    position: absolute; /* Фиксируем copyright внизу */
-  bottom: 0;
-  left: 0;
+    bottom: 0;
+    left: 0;
     background-color: #000; /* Черный фон для целостности дизайна */
     padding: 10px 0;
-    border-top: 1px solid #333; /* Тонкая линия сверху */
   }
   
   @media (max-width: 768px) {
