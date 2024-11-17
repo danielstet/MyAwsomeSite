@@ -1,0 +1,96 @@
+
+.swiper {
+    z-index: 0;
+}
+
+/* Change arrow colors */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #f6f6f6;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    /* box-shadow: 1,1,1,black; */
+}
+
+/* Customize arrow hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #f6f6f6;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* Change bullet colors */
+.swiper-pagination-bullet {
+    background: #f6f6f6;
+    /* Default color */
+}
+
+/* Change active bullet color */
+.swiper-pagination-bullet-active {
+    background: #d3d3d3;
+    /* Example active bullet color (tomato) */
+}
+
+/* Customize bullet size */
+.swiper-pagination-bullet {
+    width: 12px;
+    /* Adjust width */
+    height: 12px;
+    /* Adjust height */
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+    .swiper {
+        width: 100%;
+    }
+    
+    .swiper-slide img {
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+    display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1023px) {
+
+    .swiper {
+            max-width: 1023;
+            min-width: 640;
+        }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+/* Desktop */
+@media (min-width: 1024px) {
+
+    .swiper {
+        min-width: 1024;
+        max-width: 1080;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+}

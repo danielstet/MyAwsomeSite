@@ -6,10 +6,20 @@
 }
 
 #MenuContent {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     background-color: black;
-    width: 100%
+}
+
+#BagMenuContent {
+    z-index: 2;
+    position: absolute;
+    background-color: black;
+    right: 0;
+}
+
+#DropDownMenu:hover #BagMenuContent {
+    display: block;
 }
 
 #Type {
@@ -24,4 +34,13 @@
 
 #DropDownMenu:hover #MenuContent{
     display: block;
+}
+
+@media screen and (max-width: 728px) {
+    #MenuContent {
+      width: 100%;
+    }
+    #BagMenuContent{
+        width: 100%;
+    }
 }
