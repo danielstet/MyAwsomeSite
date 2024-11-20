@@ -1,0 +1,61 @@
+#Item {
+    justify-self: center;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    /*  temp font */
+    font-family: sans-serif;
+    max-width: fit-content;
+}
+#ItemImage {
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#ItemName {
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+#ItemPrice {
+    font-size: x-large;
+    font-weight: lighter;
+    color: #727272;
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    #ItemImage {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* For medium screens (e.g., tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    #ItemImage {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* For larger screens (e.g., desktops) */
+@media (min-width: 1025px) {
+    #ItemImage {
+        width: 250px;
+        height: 250px;
+    }
+
+    #ItemName {
+        font-size: xx-large;
+        font-weight: lighter;
+        text-align: center;
+    }
+    #ItemPrice {
+        font-size: xx-large;
+        text-align: center;
+    }
+}
