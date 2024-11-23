@@ -1,3 +1,4 @@
+
 #header {
     background-color: black;
     display: flex;
@@ -6,36 +7,39 @@
 }
 
 #MenuContent {
+    display: flex;
     z-index: 2;
     position: absolute;
     background-color: black;
     cursor: pointer;
+    flex-direction: column;
 }
 
 #BagMenuContent {
+    display: flex;
     z-index: 2;
     position: absolute;
     background-color: black;
     right: 0;
     cursor: pointer;
+    flex-direction: column-reverse;
 }
 
-#DropDownMenu:hover #BagMenuContent {
-    display: block;
+#DropDownMenu {
+    position: relative;
 }
 
-#Type {
+
+#NavsLink {
     color: white;
     padding: 1rem;
     background-color: black;
+    text-decoration: none;
 }
 
-#Type:hover {
+
+#NavsLink:hover {
     background-color: gray;
-}
-
-#DropDownMenu:hover #MenuContent{
-    display: block;
 }
 
 @media screen and (max-width: 728px) {
