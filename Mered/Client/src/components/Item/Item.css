@@ -5,11 +5,14 @@
     /*  temp font */
     font-family: sans-serif;
     max-width: fit-content;
+    cursor: pointer;
 }
 #ItemImage {
     border-radius: 10px;
     background-color: #e6e6e6;
     padding: 20px;
+    transition: transform 0.2s ease-in-out;
+    transform-origin: bottom;
 }
 
 #ItemName {
@@ -57,5 +60,9 @@
     #ItemPrice {
         font-size: xx-large;
         text-align: center;
+    }
+
+    #Item:hover > img {
+        transform: scale(1.05);
     }
 }

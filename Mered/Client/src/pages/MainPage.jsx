@@ -21,12 +21,26 @@ import photo3 from "../assets/3.webp";
 import photo4 from "../assets/4.webp";
 // @ts-ignore
 import shirt from '../assets/ShirtForShowCase.png';
+// @ts-ignore
+import example1 from "../assets/forExample1.webp";
+// @ts-ignore
+import example2 from "../assets/forExample2.jpg";
+// @ts-ignore
+import example3 from "../assets/forExample3.webp";
+// @ts-ignore
+import example4 from "../assets/forExample4.webp";
 
 // Import custom styles
 import './MainPage.css';
 
 // Item Component
 import Item from '../components/Item/Item';
+
+
+const imagesArray = [example1, example2, example3, example4];
+function getRandomNumber() {
+  return Math.floor(Math.random() * 4);
+}
 
 /**
  * The `MainPage` component is the main entry point for displaying
@@ -61,10 +75,10 @@ const MainPage = () => {
       {/* Recommended Items Section */}
       <div id='Header'>Recommended</div>
       <div id='Items'>
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 30 }).map((_, index) => (
           <Item
             key={index}
-            ProductImage={shirt}
+            ProductImage={imagesArray[getRandomNumber()]}
             ProductName="Shirt"
             ProductPrice={150}
           />

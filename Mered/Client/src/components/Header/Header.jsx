@@ -14,12 +14,12 @@ const Header = () => {
         <div id="DropDownMenu" onClick={() => {
           setIsMenuHidden(!isMenuHidden);
         }}>
-          <img src={Bars} alt="Menu Bars Icon" width={30} height={30}/>
+          <img src={Bars} alt="Menu Bars Icon" width={30} height={30} style={{ cursor: 'pointer' }} />
         </div>
         <img src={Logo} alt="Shopping Bag Icon" width={120}/>
         <img src={Bag} alt="Shopping Bag Icon" width={30} height={30} onClick={() => {
           setIsBagMenuHidden(!isBagMenuHidden);
-        }}/>
+        }} style={{ cursor: 'pointer' }} />
       </div>
 
       <div id='MenuContent' hidden={isMenuHidden}>

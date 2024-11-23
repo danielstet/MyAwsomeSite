@@ -9,6 +9,7 @@
     z-index: 2;
     position: absolute;
     background-color: black;
+    cursor: pointer;
 }
 
 #BagMenuContent {
@@ -16,6 +17,7 @@
     position: absolute;
     background-color: black;
     right: 0;
+    cursor: pointer;
 }
 
 #DropDownMenu:hover #BagMenuContent {

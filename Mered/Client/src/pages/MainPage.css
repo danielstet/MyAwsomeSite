@@ -43,13 +43,12 @@
 }
 
 #Items {
-    align-self: center;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /* Create 6 equal columns */
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    /* Space between grid items */
+    max-width: 2560px;
+    margin: 0 auto;
 }
 
 #PageList {
@@ -70,6 +69,10 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 8px;
+}
+
+#PageList>button:hover {
+    background-color: #c2c2c2;
 }
 
 #PageList > button:disabled{
@@ -149,7 +152,7 @@
 
     .swiper-slide img {
         width: 100%;
-        height: 800px;
+        max-height: 600px;
         object-fit: cover;
     }
 
@@ -173,6 +176,17 @@
             width: 3rem;
             height: 3rem;
             border-radius: 8px;
+            cursor: pointer;
+        }
+        #Items {
+            grid-template-columns: repeat(4, 1fr);
+        }
+}
+
+@media (min-width: 2560px) {
+
+    #Items {
+            grid-template-columns: repeat(5, 1fr);
         }
 }
 
