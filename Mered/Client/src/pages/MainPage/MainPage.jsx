@@ -12,29 +12,29 @@ import 'swiper/css/scrollbar';
 
 // Import temporary photos
 // @ts-ignore
-import photo1 from "../assets/1.jpg";
+import photo1 from "../../assets/1.jpg";
 // @ts-ignore
-import photo2 from "../assets/2.jpg";
+import photo2 from "../../assets/2.jpg";
 // @ts-ignore
-import photo3 from "../assets/3.webp";
+import photo3 from "../../assets/3.webp";
 // @ts-ignore
-import photo4 from "../assets/4.webp";
+import photo4 from "../../assets/4.webp";
 // @ts-ignore
-import shirt from '../assets/ShirtForShowCase.png';
+import shirt from '../../assets/ShirtForShowCase.png';
 // @ts-ignore
-import example1 from "../assets/forExample1.webp";
+import example1 from "../../assets/forExample1.webp";
 // @ts-ignore
-import example2 from "../assets/forExample2.jpg";
+import example2 from "../../assets/forExample2.jpg";
 // @ts-ignore
-import example3 from "../assets/forExample3.webp";
+import example3 from "../../assets/forExample3.webp";
 // @ts-ignore
-import example4 from "../assets/forExample4.webp";
+import example4 from "../../assets/forExample4.webp";
 
 // Import custom styles
 import './MainPage.css';
 
 // Item Component
-import Item from '../components/Item/Item';
+import Item from '../../components/Item/Item';
 
 
 const imagesArray = [example1, example2, example3, example4];

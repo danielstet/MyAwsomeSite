@@ -1,0 +1,36 @@
+#Question-Wrapper {
+    display: flex;
+    width: 960px;
+    padding: 2rem;
+    align-self: center;
+    background-color: #e6e6e6;
+    
+}
+
+#Number {
+    font-size: xxx-large;
+    padding-right:2rem ;
+    font-weight: bold;
+}
+
+#Question {
+    padding-top: 1rem;
+    font-size: xx-large;
+    font-weight: bold;
+    
+}
+
+#Answer {
+    padding-top: 2rem;
+    font-size: large;
+    color: #222222;
+}
+
+#showAnswer {
+    cursor: pointer;
+    background-color: #d1d1d1;
+    padding: 1rem;
+    border-radius: 10rem;
+    height:min-content;
+    
+}

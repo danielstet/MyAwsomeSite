@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css"
+// @ts-ignore
 import Bag from "../../assets/bag-shopping-solid.svg";
+// @ts-ignore
 import Bars from "../../assets/bars-solid.svg"
+// @ts-ignore
 import Logo from "../../assets/logo nepolny.svg"
 
 const Header = () => {
