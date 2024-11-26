@@ -4,26 +4,52 @@
     padding: 2rem;
     align-self: center;
     background-color: #e6e6e6;
-    
+
+    /* Ensure children don't stretch by default */
+    align-items: flex-start;
 }
 
 #Number {
     font-size: xxx-large;
-    padding-right:2rem ;
+    padding-right: 2rem;
     font-weight: bold;
+    flex: 0 0 auto;
+    /* Prevent #Number from growing */
+}
+
+#Content {
+    display: flex;
+    flex-direction: column;
+    /* Stack #Question and #Answer vertically */
+    flex: 1;
+    /* Allow #Content to take up all remaining space */
 }
 
 #Question {
     padding-top: 1rem;
     font-size: xx-large;
     font-weight: bold;
-    
 }
 
-#Answer {
+/* #Answer {
     padding-top: 2rem;
     font-size: large;
     color: #222222;
+} */
+
+/* Wrapper for smooth animations */
+#Answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+/* When the answer is visible */
+#Answer.show {
+    max-height: 200px;
+    /* Adjust this value to fit your content */
+    opacity: 1;
 }
 
 #showAnswer {
@@ -31,6 +57,19 @@
     background-color: #d1d1d1;
     padding: 1rem;
     border-radius: 10rem;
-    height:min-content;
-    
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    flex: 0 0 auto;
+    /* Prevent #showAnswer from growing */
+}
+
+#showAnswer>img {
+    max-width: 100%;
+    max-height: 100%;
 }
