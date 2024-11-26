@@ -49,9 +49,9 @@ const FAQDropBox = ({Number ,Question, Answer}) => {
             </div>
             <div id="showAnswer" onClick={() => setShowAnswer(!showAnswer)}>
                 {!showAnswer ? (
-                    <img src={plus} width={20} height={20} alt="Expand" />
+                    <img src={plus} alt="Expand" />
                 ) : (
-                    <img src={minus} width={20} height={20} alt="Collapse" />
+                    <img src={minus} alt="Collapse" />
                 )}
             </div>
         </div>

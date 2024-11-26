@@ -1,3 +1,4 @@
+/* Default styles (desktop) */
 #wrapper {
     display: flex;
     flex-direction: column;
@@ -5,4 +6,29 @@
     padding: 2rem;
     gap: 2rem;
     min-height: 80rem;
+    max-width: 960px;
+    /* Center the content with a max width */
+    margin: 0 auto;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 768px) {
+    #wrapper {
+        padding: 1.5rem;
+        gap: 1.5rem;
+        min-height: auto;
+        max-width: 90%;
+        /* Slightly reduce the width on smaller screens */
+    }
+}
+
+/* Phone styles */
+@media screen and (max-width: 480px) {
+    #wrapper {
+        padding: 1rem;
+        gap: 1rem;
+        min-height: auto;
+        max-width: 95%;
+        /* Use almost full width for very small screens */
+    }
 }
