@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import "./ProductPage.css";
@@ -13,6 +12,13 @@ import photo1 from "../assets/1.jpg";
 import photo2 from "../assets/2.jpg";
 import photo3 from "../assets/3.webp";
 import photo4 from "../assets/4.webp";
+import ArtistIcon from '../assets/icons/artist.svg';
+import MaterialIcon from '../assets/icons/material.svg';
+import FitIcon from '../assets/icons/fit.svg';
+import DeliveryIcon from '../assets/icons/delivery.svg';
+import TaxesIcon from '../assets/icons/taxes.svg';
+import ArrowUpIcon from '../assets/icons/arrow-up.svg';
+import ArrowDownIcon from '../assets/icons/arrow-up.svg';
 
 const ProductPage = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -62,7 +68,7 @@ const ProductPage = () => {
           of the modern world.
         </p>
 
-        {/* Dropdown Sections */}
+        
         <div className="product-details">
         <div>
     <button
@@ -70,10 +76,12 @@ const ProductPage = () => {
       onClick={() => toggleSection("artist")}
     >
       <span className="dropdown-left">
-        <span className="icon">👤</span>
+        <span className="icon">
+        <img src={ArtistIcon} alt="" />
+        </span>
         <span className="title">Artist</span>
       </span>
-      <span className="arrow">{openSection === "artist" ? "▲" : "▼"}</span>
+      <span className="arrow">{openSection === "artist" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
     </button>
     {openSection === "artist" && (
       <div className="dropdown-content">Daniel Stetsyuk</div>
@@ -86,11 +94,13 @@ const ProductPage = () => {
       onClick={() => toggleSection("material")}
     >
       <span className="dropdown-left">
-        <span className="icon">✂️</span>
+        <span className="icon">
+          <img src={MaterialIcon} alt="" />
+        </span>
         <span className="title">Material</span>
       </span>
       <span className="arrow">
-        {openSection === "material" ? "▲" : "▼"}
+        {openSection === "material" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}
       </span>
     </button>
     {openSection === "material" && (
@@ -104,10 +114,12 @@ const ProductPage = () => {
       onClick={() => toggleSection("fit")}
     >
       <span className="dropdown-left">
-        <span className="icon">📏</span>
+        <span className="icon">
+          <img src={FitIcon} alt="" />
+        </span>
         <span className="title">Fit: What’s my size?</span>
       </span>
-      <span className="arrow">{openSection === "fit" ? "▲" : "▼"}</span>
+      <span className="arrow">{openSection === "fit" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}</span>
     </button>
     {openSection === "fit" && (
       <div className="dropdown-content">Check size chart</div>
@@ -120,11 +132,13 @@ const ProductPage = () => {
       onClick={() => toggleSection("delivery")}
     >
       <span className="dropdown-left">
-        <span className="icon">📦</span>
+        <span className="icon">
+          <img src={DeliveryIcon} alt="" />
+        </span>
         <span className="title">Delivery Information</span>
       </span>
       <span className="arrow">
-        {openSection === "delivery" ? "▲" : "▼"}
+        {openSection === "delivery" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}
       </span>
     </button>
     {openSection === "delivery" && (
@@ -138,10 +152,12 @@ const ProductPage = () => {
       onClick={() => toggleSection("taxes")}
     >
       <span className="dropdown-left">
-        <span className="icon">💵</span>
+        <span className="icon">
+          <img src={TaxesIcon} alt="" />
+        </span>
         <span className="title">Customs & Import Taxes</span>
       </span>
-      <span className="arrow">{openSection === "taxes" ? "▲" : "▼"}</span>
+      <span className="arrow">{openSection === "taxes" ? <img src={ArrowUpIcon} alt="" />: <img src={ArrowDownIcon} alt="" />}</span>
     </button>
     {openSection === "taxes" && (
       <div className="dropdown-content">Covered</div>

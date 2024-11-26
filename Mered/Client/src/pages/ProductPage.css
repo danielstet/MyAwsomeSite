@@ -69,46 +69,63 @@ body {
   text-align: center; /* Центрирование текста */
 }
 
+/* Обновлено: Удалены стили списков, так как используем <div> вместо <ul> и <li> */
 .product-details {
-  list-style-type: none;
+  /* list-style-type: none; */ /* Удалено */
   padding: 0;
   font-size: 0.85rem;
   color: #333;
   text-align: left; /* Изменено с center на left */
   margin: 0;
-  border-top: 1px solid #e0e0e0;  /* Центрирование текста */
-}
-
-.product-details li {
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid #e0e0e0;
- 
-}
-
-.product-details li::before {
-  content: '●';
-  margin-right: 5px; /* Уменьшено для компактности */
-  color: #000;
-  font-size: 12px;
-}
-.product-details {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   border-top: 1px solid #e0e0e0; /* Линия в верхней части */
 }
 
-.product-details li {
+/* Обновлено: Заменили селектор с li на div */
+.product-details div {
+  margin-bottom: 0.5rem;
   border-bottom: 1px solid #e0e0e0; /* Разделительные линии между элементами */
 }
 
+/* Удалено: Стили для li::before, так как они больше не нужны */
+/* .product-details li::before {
+  content: '●';
+  margin-right: 5px;
+  color: #000;
+  font-size: 12px;
+} */
+
+/* Добавлено: Стили для .dropdown-left */
+.dropdown-left {
+  display: flex;
+  align-items: center;
+}
+
+/* Обновлено: Стили для .icon, чтобы корректно отображать SVG-иконки */
+.icon {
+  width: 24px; /* Задана ширина и высота для иконок */
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+/* Добавлено: Стили для SVG внутри .icon */
+.icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* Обновлено: Стили для .dropdown-header */
 .dropdown-header {
   width: 100%;
   padding: 1rem;
   background: none;
   border: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Разделяем левую и правую части */
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
@@ -121,21 +138,32 @@ body {
   background-color: #f9f9f9; /* Легкий фон при наведении */
 }
 
-.icon {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
-
+/* Обновлено: Стили для .arrow, чтобы корректно отображать SVG-иконки */
 .arrow {
-  font-size: 1rem;
-  color: #555; /* Цвет стрелки */
-  transition: transform 0.3s ease; /* Плавное вращение стрелки */
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
 }
 
+/* Добавлено: Стили для SVG внутри .arrow */
+.arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Обновлено: Удалены ненужные стили, связанные с font-size и color для .arrow */
+/* .arrow {
+  font-size: 1rem;
+  color: #555;
+  transition: transform 0.3s ease;
+} */
+
+/* Обновлено: Анимация поворота стрелки при открытии */
 .dropdown-header[aria-expanded="true"] .arrow {
   transform: rotate(180deg); /* Вращаем стрелку, когда шторка открыта */
 }
 
+/* Обновлено: Стили для .dropdown-content */
 .dropdown-content {
   width: 100%;
   box-sizing: border-box;
@@ -144,21 +172,23 @@ body {
   font-size: 0.9rem;
   color: #555;
   line-height: 1.4;
-  max-height: 500px;
+  max-height: 0; /* Обновлено: Устанавливаем max-height 0 при закрытом состоянии */
   overflow: hidden;
   transition: max-height 0.3s ease; 
 }
 
+/* Обновлено: Состояние открытого контента */
 .dropdown-content.open {
-  max-height: 200px; /* Достаточно места для контента */
+  max-height: 500px; /* Достаточно большое значение для раскрытия */
 }
+
 .product-sizes {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem; /* Отступы между элементами */
-  width: 100%;/* Уменьшены отступы */
+  width: 100%; /* Уменьшены отступы */
 }
 
 .size-buttons {
