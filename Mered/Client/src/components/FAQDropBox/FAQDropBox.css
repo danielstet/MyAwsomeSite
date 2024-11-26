@@ -88,15 +88,16 @@
 /* Phone styles */
 @media screen and (max-width: 480px) {
     #Question-Wrapper {
-        flex-direction: column;
+        flex-direction: row;
         width: 95%;
         padding: 1rem;
     }
 
     #Number {
-        font-size: x-large;
+        font-size: 24px;
         padding: 0;
-        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
         /* Add spacing for better readability */
         text-align: center;
     }
@@ -106,17 +107,25 @@
     }
 
     #Question {
-        font-size: large;
+        font-size: 20px;
+        text-align: start;
     }
 
     #Answer {
         font-size: small;
+        text-align: start;
+        font-size: 16px;
     }
 
     #showAnswer {
-        width: 5rem;
+        width: 0.5rem;
         height: 0.5rem;
-        margin: 1rem auto;
-        /* Center the button */
+        align-self: start;
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+    #showAnswer > img {
+        max-width: 200%;
+        max-height: 200%;
     }
 }
