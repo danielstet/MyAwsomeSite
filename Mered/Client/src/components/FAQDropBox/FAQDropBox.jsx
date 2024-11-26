@@ -33,7 +33,7 @@ const FAQDropBox = ({Number ,Question, Answer}) => {
     //     </div>
     // )
 
-     return (
+      return (
         <div id="Question-Wrapper">
             {Number < 10 ? (
                 <p id="Number">0{Number}</p>
@@ -42,7 +42,8 @@ const FAQDropBox = ({Number ,Question, Answer}) => {
             )}
             <div id="Content">
                 <p id="Question">{Question}</p>
-                <p id={`Answer ${showAnswer ? 'show' : ''}`}>
+                {/* Add the `show` class conditionally */}
+                <p id="Answer" className={showAnswer ? "show" : ""}>
                     {Answer}
                 </p>
             </div>
@@ -53,8 +54,8 @@ const FAQDropBox = ({Number ,Question, Answer}) => {
                     <img src={minus} width={20} height={20} alt="Collapse" />
                 )}
             </div>
-        </div> 
-        )
+        </div>
+    );
 }
 
 export default FAQDropBox

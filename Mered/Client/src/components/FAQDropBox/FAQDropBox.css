@@ -4,9 +4,8 @@
     padding: 2rem;
     align-self: center;
     background-color: #e6e6e6;
-
-    /* Ensure children don't stretch by default */
     align-items: flex-start;
+    /* Ensure children align properly */
 }
 
 #Number {
@@ -31,24 +30,19 @@
     font-weight: bold;
 }
 
-/* #Answer {
-    padding-top: 2rem;
+#Answer {
     font-size: large;
     color: #222222;
-} */
-
-/* Wrapper for smooth animations */
-#Answer {
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    /* Ensure hidden content doesn’t overflow */
+    max-height: 0;
     opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-/* When the answer is visible */
 #Answer.show {
     max-height: 200px;
-    /* Adjust this value to fit your content */
+    /* Adjust based on the content size */
     opacity: 1;
 }
 
@@ -59,12 +53,11 @@
     border-radius: 10rem;
     width: 2rem;
     height: 2rem;
-
     display: flex;
     justify-content: center;
-    /* Center the content horizontally */
+    /* Center content horizontally */
     align-items: center;
-    /* Center the content vertically */
+    /* Center content vertically */
     flex: 0 0 auto;
     /* Prevent #showAnswer from growing */
 }
