@@ -1,4 +1,3 @@
-
 .swiper {
     z-index: 0;
 }
@@ -71,22 +70,21 @@
     border-radius: 8px;
 }
 
-#PageList>button:hover {
+#PageList > button:hover {
     background-color: #c2c2c2;
 }
 
-#PageList > button:disabled{
+#PageList > button:disabled {
     background-color: black;
     color: white;
 }
 
 /* Mobile */
 @media (max-width: 640px) {
-
     .swiper {
         width: 100%;
     }
-    
+
     .swiper-slide img {
         width: 100%;
         max-width: 640px;
@@ -95,7 +93,7 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-    display: none;
+        display: none;
     }
 
     #Header {
@@ -113,11 +111,10 @@
 
 /* Tablet */
 @media (min-width: 641px) and (max-width: 1023px) {
-
     .swiper {
-            max-width: 1023;
-            min-width: 640;
-        }
+        max-width: 1023;
+        min-width: 640;
+    }
 
     .swiper-slide img {
         width: 100%;
@@ -138,13 +135,12 @@
         padding-left: 1rem;
     }
 
-        #Items {
-            grid-template-columns: repeat(3, 1fr);
-        }
+    #Items {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 /* Desktop */
 @media (min-width: 1024px) {
-
     .swiper {
         min-width: 1024;
         max-width: 1080;
@@ -156,37 +152,35 @@
         object-fit: cover;
     }
 
-        #Header {
-            text-align: center;
-            font-weight: bold;
-            font-size: xxx-large;
-            padding-top: 2rem;
-            padding-bottom: 1rem;
-        }
+    #Header {
+        text-align: center;
+        font-weight: bold;
+        font-size: xxx-large;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
 
-        #PageList{
-            padding-top: 3rem;
-        }
+    #PageList {
+        padding-top: 3rem;
+    }
 
-        #PageList > button {
-            text-align: center;
-            padding: 0.5rem;
-            font-weight: bold;
-            font-size: x-large;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        #Items {
-            grid-template-columns: repeat(4, 1fr);
-        }
+    #PageList > button {
+        text-align: center;
+        padding: 0.5rem;
+        font-weight: bold;
+        font-size: x-large;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    #Items {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 @media (min-width: 2560px) {
-
     #Items {
-            grid-template-columns: repeat(5, 1fr);
-        }
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
-
