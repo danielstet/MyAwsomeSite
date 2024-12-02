@@ -1,24 +1,13 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "./ProductPage.css";
-import WishlistIcon from "../assets/WishlistBlack.svg";
-import WishlistIconWhite from "../assets/WishlistWhite.svg";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import photo1 from "../assets/1.jpg";
-import photo2 from "../assets/2.jpg";
-import photo3 from "../assets/3.webp";
-import photo4 from "../assets/4.webp";
-import ArtistIcon from '../assets/icons/artist.svg';
-import MaterialIcon from '../assets/icons/material.svg';
-import FitIcon from '../assets/icons/fit.svg';
-import DeliveryIcon from '../assets/icons/delivery.svg';
-import TaxesIcon from '../assets/icons/taxes.svg';
-import ArrowUpIcon from '../assets/icons/arrow-up.svg';
-import ArrowDownIcon from '../assets/icons/arrow-up.svg';
+
+import "./ProductPage.css";
+import productContent from "../content/productContent";
 
 const ProductPage = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -32,6 +21,17 @@ const ProductPage = () => {
     setOpenSection((prevState) => (prevState === section ? null : section));
   };
 
+  const {
+    productName,
+    productDescription,
+    images,
+    details,
+    sizes,
+    price,
+    wishlistIcons,
+    arrows,
+  } = productContent;
+
   return (
     <div className="product-page">
       {/* Swiper Image Gallery */}
@@ -44,142 +44,64 @@ const ProductPage = () => {
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
         >
-          <SwiperSlide>
-            <img src={photo1} alt="Product Front" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo2} alt="Product Back" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo3} alt="Product Side" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo4} alt="Product Detail" />
-          </SwiperSlide>
+          {images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <img src={image.src} alt={image.alt} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
       {/* Product Info */}
       <div className="product-info">
-        <h1 className="product-name">MERED Antiterror Hoodie (Red Logo)</h1>
-        <p className="product-description">
-          The anti/terror hoodie by MERED is a manifesto against fear and
-          injustice. Created amidst an anxious present, it reflects the reality
-          of the modern world.
-        </p>
+        <h1 className="product-name">{productName}</h1>
+        <p className="product-description">{productDescription}</p>
 
-        
+        {/* Product Details */}
         <div className="product-details">
-        <div>
-    <button
-      className="dropdown-header"
-      onClick={() => toggleSection("artist")}
-    >
-      <span className="dropdown-left">
-        <span className="icon">
-        <img src={ArtistIcon} alt="" />
-        </span>
-        <span className="title">Artist</span>
-      </span>
-      <span className="arrow">{openSection === "artist" ? <ArrowUpIcon /> : <ArrowDownIcon />}</span>
-    </button>
-    {openSection === "artist" && (
-      <div className="dropdown-content">Daniel Stetsyuk</div>
-    )}
-  </div>
-
-  <div>
-    <button
-      className="dropdown-header"
-      onClick={() => toggleSection("material")}
-    >
-      <span className="dropdown-left">
-        <span className="icon">
-          <img src={MaterialIcon} alt="" />
-        </span>
-        <span className="title">Material</span>
-      </span>
-      <span className="arrow">
-        {openSection === "material" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}
-      </span>
-    </button>
-    {openSection === "material" && (
-      <div className="dropdown-content">Cotton</div>
-    )}
-  </div>
-
-  <div>
-    <button
-      className="dropdown-header"
-      onClick={() => toggleSection("fit")}
-    >
-      <span className="dropdown-left">
-        <span className="icon">
-          <img src={FitIcon} alt="" />
-        </span>
-        <span className="title">Fit: What’s my size?</span>
-      </span>
-      <span className="arrow">{openSection === "fit" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}</span>
-    </button>
-    {openSection === "fit" && (
-      <div className="dropdown-content">Check size chart</div>
-    )}
-  </div>
-
-  <div>
-    <button
-      className="dropdown-header"
-      onClick={() => toggleSection("delivery")}
-    >
-      <span className="dropdown-left">
-        <span className="icon">
-          <img src={DeliveryIcon} alt="" />
-        </span>
-        <span className="title">Delivery Information</span>
-      </span>
-      <span className="arrow">
-        {openSection === "delivery" ? <img src={ArrowUpIcon} alt="" /> : <img src={ArrowDownIcon} alt="" />}
-      </span>
-    </button>
-    {openSection === "delivery" && (
-      <div className="dropdown-content">30 Days Return Policy</div>
-    )}
-  </div>
-
-  <div>
-    <button
-      className="dropdown-header"
-      onClick={() => toggleSection("taxes")}
-    >
-      <span className="dropdown-left">
-        <span className="icon">
-          <img src={TaxesIcon} alt="" />
-        </span>
-        <span className="title">Customs & Import Taxes</span>
-      </span>
-      <span className="arrow">{openSection === "taxes" ? <img src={ArrowUpIcon} alt="" />: <img src={ArrowDownIcon} alt="" />}</span>
-    </button>
-    {openSection === "taxes" && (
-      <div className="dropdown-content">Covered</div>
-    )}
-  </div>
+          {details.map((detail) => (
+            <div key={detail.id}>
+              <button
+                className="dropdown-header"
+                onClick={() => toggleSection(detail.id)}
+              >
+                <span className="dropdown-left">
+                  <span className="icon">
+                    <img src={detail.icon} alt={`${detail.title} Icon`} />
+                  </span>
+                  <span className="title">{detail.title}</span>
+                </span>
+                <span className="arrow">
+                  <img
+                    src={openSection === detail.id ? arrows.up : arrows.down}
+                    alt="Toggle Arrow"
+                  />
+                </span>
+              </button>
+              {openSection === detail.id && (
+                <div
+                  className="dropdown-content"
+                  dangerouslySetInnerHTML={{ __html: detail.content }}
+                />
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Size Selection */}
         <div className="product-sizes">
           <div className="size-buttons">
-            <button className="size-option">S</button>
-            <button className="size-option">M</button>
-            <button className="size-option">L</button>
-            <button className="size-option">XL</button>
-            <button className="size-option">2XL</button>
-            <button className="size-option">3XL</button>
+            {sizes.map((size) => (
+              <button key={size} className="size-option">
+                {size}
+              </button>
+            ))}
             <button
               className={`bookmark ${isBookmarked ? "active" : ""}`}
               onClick={toggleBookmark}
             >
               <img
-                src={isBookmarked ? WishlistIconWhite : WishlistIcon}
+                src={isBookmarked ? wishlistIcons.active : wishlistIcons.default}
                 alt="Wishlist"
                 className="bookmark-icon"
               />
@@ -187,7 +109,7 @@ const ProductPage = () => {
           </div>
           <div className="add-to-cart-container">
             <button className="add-to-cart">Add to Cart</button>
-            <span className="price">350₪</span>
+            <span className="price">{price}</span>
           </div>
         </div>
       </div>

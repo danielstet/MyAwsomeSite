@@ -14,25 +14,25 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   background-color: #fff;
-  gap: 1rem; /* Добавлено для отступов между блоками */
+  gap: 1rem;
   flex-direction: row-reverse;
 }
 
 .image-gallery {
   flex: 1;
   min-width: 300px;
-  max-width: 100%; /* Гарантируем адаптацию на мобильных устройствах */
+  max-width: 100%;
   margin-right: 2rem;
   margin-bottom: 1.5rem;
 }
 
 .image-gallery img {
-  width: 100%; 
-  height: auto; 
-  object-fit: cover; 
-  border-radius: 10px; 
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
 }
 
 .swiper-button-next,
@@ -47,62 +47,49 @@ body {
 .product-info {
   flex: 1;
   min-width: 300px;
-  max-width: 100%; /* Добавлено для мобильных устройств */
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Для компактного расположения */
+  gap: 1rem;
 }
 
 .product-name {
-  font-size: 1.5rem; /* Уменьшено для мобильных */
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   border-bottom: 2px solid #000;
   padding-bottom: 0.5rem;
-  text-align: center; /* Центрирование заголовка */
+  text-align: center;
 }
 
 .product-description {
-  font-size: 0.9rem; /* Уменьшено для мобильных */
+  font-size: 0.9rem;
   line-height: 1.4;
   color: #555;
-  text-align: center; /* Центрирование текста */
+  text-align: center;
 }
 
-/* Обновлено: Удалены стили списков, так как используем <div> вместо <ul> и <li> */
 .product-details {
-  /* list-style-type: none; */ /* Удалено */
   padding: 0;
   font-size: 0.85rem;
   color: #333;
-  text-align: left; /* Изменено с center на left */
+  text-align: left;
   margin: 0;
-  border-top: 1px solid #e0e0e0; /* Линия в верхней части */
+  border-top: 1px solid #e0e0e0;
 }
 
-/* Обновлено: Заменили селектор с li на div */
 .product-details div {
   margin-bottom: 0.5rem;
-  border-bottom: 1px solid #e0e0e0; /* Разделительные линии между элементами */
+  border-bottom: 1px solid #e0e0e0;
 }
 
-/* Удалено: Стили для li::before, так как они больше не нужны */
-/* .product-details li::before {
-  content: '●';
-  margin-right: 5px;
-  color: #000;
-  font-size: 12px;
-} */
-
-/* Добавлено: Стили для .dropdown-left */
 .dropdown-left {
   display: flex;
   align-items: center;
 }
 
-/* Обновлено: Стили для .icon, чтобы корректно отображать SVG-иконки */
 .icon {
-  width: 24px; /* Задана ширина и высота для иконок */
+  width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
@@ -110,22 +97,18 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Добавлено: Стили для SVG внутри .icon */
-.icon svg {
-  width: 30px;
-  height: 30px;
+.icon img {
+  width: 100%;
+  height: 100%;
 }
 
-
-
-/* Обновлено: Стили для .dropdown-header */
 .dropdown-header {
   width: 100%;
   padding: 1rem;
   background: none;
   border: none;
   display: flex;
-  justify-content: space-between; /* Разделяем левую и правую части */
+  justify-content: space-between;
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
@@ -135,72 +118,67 @@ body {
 }
 
 .dropdown-header:hover {
-  background-color: #f9f9f9; /* Легкий фон при наведении */
+  background-color: #f9f9f9;
 }
 
-/* Обновлено: Стили для .arrow, чтобы корректно отображать SVG-иконки */
 .arrow {
   width: 16px;
   height: 16px;
   transition: transform 0.3s ease;
 }
 
-/* Добавлено: Стили для SVG внутри .arrow */
-.arrow svg {
+.arrow img {
   width: 100%;
   height: 100%;
 }
 
-/* Обновлено: Удалены ненужные стили, связанные с font-size и color для .arrow */
-/* .arrow {
-  font-size: 1rem;
-  color: #555;
-  transition: transform 0.3s ease;
-} */
-
-/* Обновлено: Анимация поворота стрелки при открытии */
-.dropdown-header[aria-expanded="true"] .arrow {
-  transform: rotate(180deg); /* Вращаем стрелку, когда шторка открыта */
-}
-
-/* Обновлено: Стили для .dropdown-content */
 .dropdown-content {
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-  background-color: #f7f7f7; 
+  background-color: #f7f7f7;
   font-size: 0.9rem;
   color: #555;
   line-height: 1.4;
-  max-height: 0; /* Обновлено: Устанавливаем max-height 0 при закрытом состоянии */
-  overflow: hidden;
-  transition: max-height 0.3s ease; 
 }
-
-/* Обновлено: Состояние открытого контента */
-.dropdown-content.open {
-  max-height: 500px; /* Достаточно большое значение для раскрытия */
+.artist-info {
+  display: flex;
+  align-items: center;
 }
-
+.artist-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; 
+  object-fit: cover;  
+  margin-right: 1rem; 
+}
+.artist-name {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.artist-name:hover {
+  text-decoration: underline;
+}
 .product-sizes {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Отступы между элементами */
-  width: 100%; /* Уменьшены отступы */
+  gap: 1rem;
+  width: 100%;
 }
 
 .size-buttons {
   display: flex;
-  justify-content: center; /* Центрируем элементы */
-  align-items: center; /* Выравниваем элементы по вертикали */
-  gap: 0.5rem; /* Промежуток между кнопками */
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .size-option {
-  width: 45px; /* Уменьшаем размеры кнопок */
+  width: 45px;
   height: 45px;
   border: 1px solid #000;
   background-color: #fff;
@@ -222,7 +200,7 @@ body {
 }
 
 .bookmark {
-  width: 45px; 
+  width: 45px;
   height: 45px;
   border: 1px solid #000;
   background-color: #fff;
@@ -239,24 +217,23 @@ body {
 }
 
 .bookmark-icon {
-  width: 20px; /* Уменьшено для мобильных */
+  width: 20px;
   height: 20px;
   object-fit: contain;
   transition: filter 0.3s;
 }
-
 .bookmark.active .bookmark-icon {
   filter: invert(1);
 }
 
 .add-to-cart-container {
   display: flex;
-  justify-content: space-between; /* Размещаем кнопку и цену на одном уровне */
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem; /* Промежуток между кнопкой и ценой */
+  gap: 1rem;
   width: 100%;
   max-width: 400px;
-  margin: 0 auto; /* Центрируем блок */
+  margin: 0 auto;
 }
 
 .add-to-cart {
@@ -269,7 +246,7 @@ body {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  text-align: center; /* Центрируем текст */
+  text-align: center;
 }
 
 .add-to-cart:hover {
@@ -279,11 +256,11 @@ body {
 .price {
   font-size: 16px;
   font-weight: bold;
-  text-align: right; /* Выравниваем текст справа */
-  flex-shrink: 0; 
+  text-align: right;
+  flex-shrink: 0;
 }
 
-/* Мобильная адаптация */
+/* Mobile Adaptation */
 @media (max-width: 768px) {
   .product-page {
     flex-direction: column;
@@ -305,7 +282,7 @@ body {
 
   .add-to-cart-container {
     flex-direction: column;
-    gap: 0.5rem; /* Уменьшены отступы */
+    gap: 0.5rem;
   }
 
   .add-to-cart {
