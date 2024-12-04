@@ -15,6 +15,7 @@ const Contact = () => <h2>Contact Page</h2>;
 function App() {
   return (
     <>
+    <Router>
       <Header/>
       <Routes>
         <Route path='/' element={<MainPage />}/>
@@ -25,6 +26,8 @@ function App() {
         <Route path="/product" element={<ProductPage />} />
       </Routes>
       <Footer/>
+    </Router>
+
     </>
   )
 }
