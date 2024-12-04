@@ -1,0 +1,12 @@
+#loginForm {
+    background-color: grey;
+
+}
+
+#loginLabel{
+    font-size: large;
+}
+
+#loginForm > input {
+    color: #000;
+}

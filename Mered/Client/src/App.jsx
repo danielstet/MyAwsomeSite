@@ -6,6 +6,7 @@ import FAQ from './pages/FAQPage/FAQ';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import "./App.css"
+import LoginPage from './pages/Login/LoginPage';
 const About = () => <h2>About Page</h2>;
 const Contact = () => <h2>Contact Page</h2>;
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
       <Footer/>
     </Router>
