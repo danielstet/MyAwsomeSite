@@ -69,7 +69,7 @@ const productContent = {
     },
   ],
   sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
-  price: "356₪",
+  price: "376₪",
   wishlistIcons: {
     default: WishlistIcon,
     active: WishlistIconWhite,

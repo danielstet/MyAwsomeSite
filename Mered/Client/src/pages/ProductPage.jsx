@@ -88,7 +88,7 @@ const ProductPage = () => {
           ))}
         </div>
 
-        {/* Size Selection */}
+     
         <div className="product-sizes">
           <div className="size-buttons">
             {sizes.map((size) => (
@@ -108,9 +108,11 @@ const ProductPage = () => {
             </button>
           </div>
           <div className="add-to-cart-container">
-            <button className="add-to-cart">Add to Cart</button>
-            <span className="price">{price}</span>
-          </div>
+  <button className="add-to-cart">
+    Add to Cart
+    <span className="price">{price}</span>
+  </button>
+</div>
         </div>
       </div>
     </div>
