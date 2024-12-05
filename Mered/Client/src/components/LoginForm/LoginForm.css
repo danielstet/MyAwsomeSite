@@ -1,0 +1,49 @@
+#LoginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#emailLabel {
+    font-size: medium;
+    padding-bottom: 0.5rem;
+}
+
+#passwordLabel{
+    font-size: medium;
+    padding-bottom: 0.5rem;
+}
+
+#LoginForm > input {
+    margin-bottom: 0.5rem;
+    font-size: large;
+    padding: 0.5rem;
+    border: none;
+}
+
+#LoginForm > div > input {
+    margin-bottom: 0.5rem;
+    font-size: large;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border: none;
+    flex-grow: 1;
+}
+
+#LoginForm>div>button {
+    width: max-content;
+    align-self: self-start;
+    padding: 0.7rem;
+    border: none;
+    background-color: white;
+    text-align: center;
+}
+
+#LoginForm>button {
+    margin-top: 0.5rem;
+    font-size: large;
+    background-color: #000;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+}

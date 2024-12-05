@@ -3,12 +3,14 @@ import React from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import LoginWithGoogle from '../../components/GoogleButtons/LoginWithGoogle'
 
+import './LoginPage.css'
+
 const LoginPage = () => {
   return (
-    <>
+    <div id='LoginPage'>
       <LoginForm />
       <LoginWithGoogle />
-    </>
+    </div>
   )
 }
 
