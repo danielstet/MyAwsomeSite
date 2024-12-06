@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import "./ProductPage.css";
-import productContent from "../content/productContent";
+import productContent from "../../content/productContent";
 
 const ProductPage = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);

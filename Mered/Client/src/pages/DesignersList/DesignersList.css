@@ -1,0 +1,29 @@
+.designers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .designer-card {
+    text-align: center;
+  }
+  
+  .designer-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .designer-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+  }
+  
+  .designer-name {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
