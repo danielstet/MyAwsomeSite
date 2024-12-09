@@ -1,26 +1,25 @@
-#LoginForm {
+#RegisterForm {
     display: flex;
     flex-direction: column;
 }
-
 #emailLabel {
     font-size: medium;
     padding-bottom: 0.5rem;
 }
 
-#passwordLabel{
+#passwordLabel {
     font-size: medium;
     padding-bottom: 0.5rem;
 }
 
-#LoginForm > input {
+#RegisterForm>input {
     margin-bottom: 0.5rem;
     font-size: large;
     padding: 0.5rem;
     border: none;
 }
 
-#LoginForm > div > input {
+#RegisterForm>div>input {
     margin-bottom: 0.5rem;
     font-size: large;
     padding-left: 0.5rem;
@@ -30,7 +29,7 @@
     flex-grow: 1;
 }
 
-#LoginForm>div>button {
+#RegisterForm>div>button {
     width: max-content;
     align-self: self-start;
     padding: 0.7rem;
@@ -40,7 +39,7 @@
     text-align: center;
 }
 
-#LoginForm>button {
+#RegisterForm>button {
     margin-top: 0.5rem;
     font-size: large;
     background-color: #000;
@@ -48,24 +47,44 @@
     padding: 0.5rem;
     border: none;
 }
+#RegisterForm>button:disabled {
+    background-color: rgb(63, 63, 63);
+    text-decoration: line-through;
+}
 
-#LoginForm>div>input.invalid {
+#RegisterForm>div>input.invalid {
     border-top: 1px solid red;
     border-bottom: 1px solid red;
     border-left: 1px solid red;
 }
 
-#LoginForm>input.invalid {
+#RegisterForm>input.invalid {
     border: 1px solid red;
 }
 
-#LoginForm>div>button.invalid {
+#RegisterForm>div>button.invalid {
     border-right: 1px solid red;
     border-top: 1px solid red;
     border-bottom: 1px solid red;
 }
+/* 
+#RegisterForm>div>input.valid {
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    border-left: 1px solid green;
+}
 
-#LoginForm > #errorMessage {
+#RegisterForm>input.valid {
+    border: 1px solid green;
+}
+
+#RegisterForm>div>button.valid {
+    border-right: 1px solid green;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+} */
+
+#RegisterForm>#errorMessage {
     /* text-align: center; */
     color: rgb(197, 0, 0);
     font-size: large;

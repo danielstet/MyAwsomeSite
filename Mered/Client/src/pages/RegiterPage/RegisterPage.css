@@ -1,0 +1,21 @@
+#RegisterPage {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(206, 206, 206);
+    padding: 2rem;
+    max-width: 425px;
+    margin: auto;
+}
+
+#RegisterPage > #h {
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#RegisterPage> #LoginLink {
+    padding-top: 1rem;
+    text-align: center;
+    font-size: medium;
+}

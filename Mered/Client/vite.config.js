@@ -1,26 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [
-		react(),
-		{
-			name: 'custom-headers',
-			configureServer(server) {
-				server.middlewares.use((req, res, next) => {
-					res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless'); // Or 'require-corp'
-					res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-					res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-					next();
-				});
-			},
-		},
-	],
+	plugins: [react()],
 	server: {
 		headers: {
+			// 'Cross-Origin-Embedder-Policy': 'credentialless',
+			'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
 			'Cross-Origin-Resource-Policy': 'cross-origin',
-			'Cross-Origin-Embedder-Policy': 'credentialless',
-			'Cross-Origin-Opener-Policy': 'same-origin',
 		},
 	},
 });

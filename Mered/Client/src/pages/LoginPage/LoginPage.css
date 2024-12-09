@@ -1,0 +1,19 @@
+#LoginPage {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(206, 206, 206);
+    padding: 2rem;
+    max-width: 425px;
+    margin: auto;
+}
+
+#LoginPage > #registerLink {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: medium;
+}
+
+#Or {
+    font-weight: bold;
+    font-size: large;
+}
