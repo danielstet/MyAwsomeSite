@@ -130,7 +130,7 @@ const [formData, setFormData] = useState({ email: '', password: '', confirmPassw
   return (
     <div>
         <form onSubmit={handleSubmit} id='RegisterForm'>
-            <label id='emailLabel'>Enter your email:</label>
+            <label htmlFor='emailInput' id='emailLabel'>Enter your email:</label>
             <input type="email"
             id="emailInput"
             name="email"
@@ -140,7 +140,7 @@ const [formData, setFormData] = useState({ email: '', password: '', confirmPassw
             className={`input ${emailIsInvalid ? 'invalid' : ''}`}
             required />
 
-            <label id='passwordLabel'>Enter your password:</label>
+            <label htmlFor='passwordInput' id='passwordLabel'>Enter your password:</label>
             <input type={showPassword ? 'text' : 'password'}
             id="passwordInput"
             name="password"
@@ -150,9 +150,9 @@ const [formData, setFormData] = useState({ email: '', password: '', confirmPassw
             className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
             required />
 
-            <label id='passwordLabel'>Confirm your password:</label>
+            <label htmlFor='confirmPasswordInput' id='passwordLabel'>Confirm your password:</label>
             <input type={showPassword ? 'text' : 'password'}
-            id="passwordInput"
+            id="confirmPasswordInput"
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
