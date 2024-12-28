@@ -1,0 +1,88 @@
+/* DesignersPage Styles */
+
+#HeroSection {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+#HeroSection h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#HeroSection p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.swiper {
+    margin-bottom: 2rem;
+}
+
+/* Carousel Arrow Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+    border-radius: 100%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.swiper-pagination-bullet {
+    background: #000;
+}
+
+.swiper-pagination-bullet-active {
+    background: #555;
+}
+
+#Header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+#Items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    #HeroSection h1 {
+        font-size: 2rem;
+    }
+
+    #HeroSection p {
+        font-size: 1rem;
+    }
+
+    #Items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #HeroSection h1 {
+        font-size: 3rem;
+    }
+
+    #HeroSection p {
+        font-size: 1.5rem;
+    }
+
+    #Items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
