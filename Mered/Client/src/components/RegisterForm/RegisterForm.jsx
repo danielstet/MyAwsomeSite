@@ -9,11 +9,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import './RegisterForm.css'
 
 const RegisterForm = () => {
-const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '' });
+    const [formData, setFormData] = useState({ email: '', password: '', confirmPassword: '' });
     const [showPassword, setShowPassword] = useState(false);
     const [emailIsInvalid, setEmailIsInvalid] = useState(false);
     const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+    
+    const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+    };
+
     const toastStyle = {
         position: "bottom-right",
         autoClose: 5000,
@@ -127,53 +132,60 @@ const [formData, setFormData] = useState({ email: '', password: '', confirmPassw
         }
     }
 
-  return (
-    <div>
-        <form onSubmit={handleSubmit} id='RegisterForm'>
-            <label htmlFor='emailInput' id='emailLabel'>Enter your email:</label>
-            <input type="email"
-            id="emailInput"
-            name="email"
-            autoComplete='email'
-            value={formData.email}
-            onChange={handleChange}
-            className={`input ${emailIsInvalid ? 'invalid' : ''}`}
-            required />
+    return (
+        <div>
+            <form onSubmit={handleSubmit} id='RegisterForm'>
+                <label htmlFor='emailInput' id='emailLabel'>Enter your email:</label>
+                <input type="email"
+                id="emailInput"
+                name="email"
+                autoComplete='email'
+                value={formData.email}
+                onChange={handleChange}
+                className={`input ${emailIsInvalid ? 'invalid' : ''}`}
+                required />
 
-            <label htmlFor='passwordInput' id='passwordLabel'>Enter your password:</label>
-            <input type={showPassword ? 'text' : 'password'}
-            id="passwordInput"
-            name="password"
-            value={formData.password}
-            autoComplete='new-password'
-            onChange={handleChange}
-            className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
-            required />
+                <label htmlFor='passwordInput' id='passwordLabel'>Enter your password:</label>
+                <div style={{ display: 'flex', alignItems: 'center',  }}>
+                    <input type={showPassword ? 'text' : 'password'}
+                    id="passwordInput"
+                    name="password"
+                    value={formData.password}
+                    autoComplete='new-password'
+                    onChange={handleChange}
+                    className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
+                    required />
+                    <button
+                        type="button"
+                        onClick={togglePasswordVisibility}
+                        className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
+                    >{showPassword ? 'Hide' : 'Show'}</button>
+                </div>
 
-            <label htmlFor='confirmPasswordInput' id='passwordLabel'>Confirm your password:</label>
-            <input type={showPassword ? 'text' : 'password'}
-            id="confirmPasswordInput"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
-            required />
-            { errorMessage && <p id='errorMessage'>{errorMessage}</p> }
-            <button type='submit' disabled={!isValid}>Sign-up</button>
-        </form>
-        <ToastContainer 
-        position="bottom-right" 
-        autoClose={5000} 
-        hideProgressBar={true} 
-        newestOnTop={false} 
-        closeOnClick 
-        rtl={false} 
-        pauseOnFocusLoss 
-        draggable 
-        pauseOnHover 
-        />
-    </div>
-  )
+                <label htmlFor='confirmPasswordInput' id='passwordLabel'>Confirm your password:</label>
+                <input type={showPassword ? 'text' : 'password'}
+                id="confirmPasswordInput"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className={`input ${passwordIsInvalid ? 'invalid' : ''}`}
+                required />
+                { errorMessage && <p id='errorMessage'>{errorMessage}</p> }
+                <button type='submit' disabled={!isValid}>Sign-up</button>
+            </form>
+            <ToastContainer 
+            position="bottom-right" 
+            autoClose={5000} 
+            hideProgressBar={true} 
+            newestOnTop={false} 
+            closeOnClick 
+            rtl={false} 
+            pauseOnFocusLoss 
+            draggable 
+            pauseOnHover 
+            />
+        </div>
+    )
 }
 
 export default RegisterForm

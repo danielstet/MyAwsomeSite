@@ -7,10 +7,14 @@ import Bag from "../../assets/bag-shopping-solid.svg";
 import Bars from "../../assets/bars-solid.svg"
 // @ts-ignore
 import Logo from "../../assets/logo nepolny.svg"
+import { logoutUser } from '../../firebase/authThunks'
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
   const [isMenuHidden, setIsMenuHidden] = useState(true);
   const [isBagMenuHidden, setIsBagMenuHidden] = useState(true);
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -36,7 +40,10 @@ const Header = () => {
           <Link to="/"  id='NavsLink'>Shopping Cart</Link>
           <Link to="/about"  id='NavsLink'>Wishlist</Link>
           <Link to="/contact"  id='NavsLink'>Account Information</Link>
-          <Link to="/"  id='NavsLink'>Sign out</Link>
+          <p onClick={() =>{
+            // @ts-ignore
+            dispatch(logoutUser())
+          }}  id='NavsLink'>Sign out</p>
         </nav>
       )}
     </>

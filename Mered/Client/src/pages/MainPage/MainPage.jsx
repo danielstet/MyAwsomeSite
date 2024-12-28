@@ -75,7 +75,7 @@ const MainPage = () => {
       {/* Recommended Items Section */}
       <div id='Header'>Recommended</div>
       <div id='Items'>
-        {Array.from({ length: 30 }).map((_, index) => (
+        {Array.from({ length: 20 }).map((_, index) => (
           <Item
             key={index}
             ProductImage={imagesArray[getRandomNumber()]}

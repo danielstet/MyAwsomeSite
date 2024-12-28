@@ -130,7 +130,7 @@ const LoginForm = () => {
       </div>
 
       { errorMessage && <p id='errorMessage'>{errorMessage}</p>}
-      <button type="submit">Login</button>
+      {isLoading? <button type="submit" disabled>Login</button> : <button type="submit">Login</button>}
     </form>
     <ToastContainer 
     position="bottom-right" 
