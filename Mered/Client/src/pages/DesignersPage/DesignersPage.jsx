@@ -15,16 +15,15 @@ import './DesignersPage.css';
 
 // Import temporary photos
 // @ts-ignore
-import photo1 from "../../assets/brand1.jpg";
+import photo1 from "../../assets/1.jpg";
 // @ts-ignore
-import photo2 from "../../assets/brand2.jpg";
+import photo2 from "../../assets/2.jpg";
 // @ts-ignore
-import photo3 from "../../assets/brand3.webp";
+import photo3 from "../../assets/3.webp";
 // @ts-ignore
-import photo4 from "../../assets/brand4.webp";
+import photo4 from "../../assets/4.webp";
 
-// Import product images
-// @ts-ignore
+
 import example1 from "../../assets/forExample1.webp";
 // @ts-ignore
 import example2 from "../../assets/forExample2.jpg";
