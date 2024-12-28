@@ -10,7 +10,8 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import { Provider } from 'react-redux';
 import { initializeAuthListener } from './firebase/initializeAuthListener'; 
 import store from './redux/store/store';
-
+import DesignersList from "./pages/DesignersList/DesignersList"
+import DesignersPage from "./pages/DesignersPage/DesignersPage"
 import "./App.css";
 import RegisterPage from './pages/RegiterPage/RegisterPage';
 const About = () => <h2>About Page</h2>;
@@ -37,6 +38,10 @@ function App() {
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path="/product" element={<ProductPage />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/designers" element={<DesignersList />} />
+          <Route path="/designer" element={<DesignersPage/>}/>
         </Routes>
         <Footer/>
       </Router>
