@@ -14,6 +14,7 @@ import DesignersList from "./pages/DesignersList/DesignersList"
 import DesignersPage from "./pages/DesignersPage/DesignersPage"
 import "./App.css";
 import RegisterPage from './pages/RegiterPage/RegisterPage';
+import CartPage from './pages/CartPage/CartPage'
 const About = () => <h2>About Page</h2>;
 const Contact = () => <h2>Contact Page</h2>;
 
@@ -41,7 +42,8 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/designers" element={<DesignersList />} />
-          <Route path="/designer" element={<DesignersPage/>}/>
+          <Route path="/artist" element={<DesignersPage/>}/>
+          <Route path="/cart" element={<CartPage/>}/>
         </Routes>
         <Footer/>
       </Router>

@@ -56,8 +56,8 @@ const DesignersPage = () => {
     <>
       {/* Hero Section */}
       <div id="HeroSection">
-        <h1>Explore the Collection</h1>
-        <p>Discover the exquisite designs of our featured designer.</p>
+        <h1>COULTURES</h1>
+        <p>Discover the exquisite designs of our new collection.</p>
       </div>
 
       {/* Swiper Carousel */}
