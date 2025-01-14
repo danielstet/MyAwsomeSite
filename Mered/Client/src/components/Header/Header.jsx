@@ -22,7 +22,7 @@ const Header = () => {
         <div id="DropDownMenu" onClick={() => setIsMenuHidden(!isMenuHidden)}>
           <img src={Bars} alt="Menu Bars Icon" width={30} height={30} style={{ cursor: 'pointer' }} />
         </div>
-        <img src={Logo} alt="Shopping Bag Icon" width={120}/>
+        <Link to="/"><img src={Logo} alt="Shopping Bag Icon" width={120}/></Link>
         <img src={Bag} alt="Shopping Bag Icon" width={30} height={30} onClick={() => {
           setIsBagMenuHidden(!isBagMenuHidden);
         }} style={{ cursor: 'pointer' }} />
@@ -33,13 +33,15 @@ const Header = () => {
           <Link to="/about"  id='NavsLink'>T-shirts/Shirts</Link>
           <Link to="/contact"  id='NavsLink'>Outwear</Link>
           <Link to="/"  id='NavsLink'>Accessories</Link>
+          <Link to="/designers"  id='NavsLink'>Our Designers</Link>
         </nav>
       )}
       {!isBagMenuHidden && (
         <nav id='BagMenuContent'>
-          <Link to="/"  id='NavsLink'>Shopping Cart</Link>
+          <Link to="/cart"  id='NavsLink'>Shopping Cart</Link>
           <Link to="/about"  id='NavsLink'>Wishlist</Link>
           <Link to="/contact"  id='NavsLink'>Account Information</Link>
+          <Link to="/faq"  id='NavsLink'>FAQ</Link>
           <p onClick={() =>{
             // @ts-ignore
             dispatch(logoutUser())
