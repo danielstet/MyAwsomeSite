@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import MainPage from "./pages/MainPage/MainPage";
@@ -18,38 +18,45 @@ import CartPage from './pages/CartPage/CartPage'
 const About = () => <h2>About Page</h2>;
 const Contact = () => <h2>Contact Page</h2>;
 
-function App() {
-
-
-  useEffect(() => {
-    
-    initializeAuthListener();
-  },[])
+function Layout() {
+  const location = useLocation();
+  
+  
+  const isRegisterPage = location.pathname === '/register';
 
   return (
     <>
+      {!isRegisterPage && <Header />}
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/faq' element={<FAQ />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/product' element={<ProductPage />} />
+        <Route path='/designers' element={<DesignersList />} />
+        <Route path='/artist' element={<DesignersPage />} />
+        <Route path='/cart' element={<CartPage />} />
+      </Routes>
+      {!isRegisterPage && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    initializeAuthListener();
+  }, []);
+
+  return (
     <Provider store={store}>
       <Router>
-        <Header/>
-        <Routes>
-          <Route path='/' element={<MainPage />}/>
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/designers" element={<DesignersList />} />
-          <Route path="/artist" element={<DesignersPage/>}/>
-          <Route path="/cart" element={<CartPage/>}/>
-        </Routes>
-        <Footer/>
+        <Layout />
       </Router>
     </Provider>
-    </>
-  )
+  );
 }
+
 
 export default App;
